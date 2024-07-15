@@ -16,7 +16,7 @@ app.use(express.json());
 
 app.use("/productos", require("./routes/productos.router"));
 
-app.use("/auth", require("./routes/auth.router"));
+
 
 app.get("/", (req, res) => {
   res.send("");

@@ -31,7 +31,7 @@ const show = (req, res) => {
 
 const store = (req, res) => {
   // console.log(req.file);
-  const { nombre, stock , precio } = req.body;
+  const { nombre, precio, stock } = req.body;
 
   const sql =
     "INSERT INTO productos (nombre, precio, stock) VALUES (?, ?, ?)";
@@ -50,8 +50,8 @@ const update = (req, res) => {
   const { id } = req.params;
   const { nombre, stock, precio } = req.body;
 
-  const sql =
-    "UPDATE productos SET nombre = ?, stock = ?, precio = ? WHERE id = ?";
+  const sql = 
+  "UPDATE productos SET nombre = ?, stock = ?, precio = ? WHERE id = ?";
   db.query(sql, [nombre, stock, precio, id], (error, result) => {
     if (error) {
       return res.status(500).json({ error: "Intente mas tarde" });
